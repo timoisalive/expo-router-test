@@ -1,12 +1,8 @@
-import { Link, useLocalSearchParams } from "expo-router"
+import { Link } from "expo-router"
 import { useMemo } from "react"
 import { ScrollView, Text } from "react-native"
 
 export default function Screen() {
-  const { username } = useLocalSearchParams()
-
-  console.log("[username]", username)
-
   const randomUsername = useMemo(
     () => `user-${Math.floor(Math.random() * 1000)}`,
     []
@@ -14,7 +10,7 @@ export default function Screen() {
 
   return (
     <ScrollView
-      contentContainerStyle={{ alignItems: "center", paddingTop: 48 }}
+      contentContainerStyle={{ alignItems: "center", paddingTop: 24 }}
     >
       <Link
         href={{
